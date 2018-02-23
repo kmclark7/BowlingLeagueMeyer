@@ -12,7 +12,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name="team")
 
-
 public class Team {
 
 @Id
