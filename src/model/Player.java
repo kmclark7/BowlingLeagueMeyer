@@ -27,9 +27,8 @@ public class Player {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Player(int playerId, String firstName, String lastName, String phoneNumber, String screenName, Team team) {
+	public Player(String firstName, String lastName, String phoneNumber, String screenName, Team team) {
 		super();
-		this.playerId = playerId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.phoneNumber = phoneNumber;
