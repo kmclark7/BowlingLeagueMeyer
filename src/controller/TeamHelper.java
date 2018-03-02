@@ -22,7 +22,7 @@ public class TeamHelper {
 		em.getTransaction().commit();
 		em.close();
 	}
-	
+
 	public List<Team> getAllTeams() {
 		EntityManager em = emfactory.createEntityManager();
 		TypedQuery<Team> allResults = em.createQuery("SELECT team FROM Team team ORDER BY team.teamName", Team.class);
