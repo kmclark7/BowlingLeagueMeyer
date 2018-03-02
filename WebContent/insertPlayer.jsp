@@ -22,5 +22,5 @@
 		<input type="submit" value="Add Player"> <br />
 	</form>
 </body>
-<a href="index.jsp">Home</a>
+<a href="index.html">Home</a>
 </html>
