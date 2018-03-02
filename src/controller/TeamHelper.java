@@ -23,22 +23,19 @@ public class TeamHelper {
 		em.close();
 	}
 
-	public Object showAllTeams() {
-		// TODO Auto-generated method stub
+	public List<Team> getAllTeams() {
 		EntityManager em = emfactory.createEntityManager();
-		TypedQuery<Team> allResults = em.createQuery("select ti from Team ti", Team.class);
-		List<Team> allTeams = allResults.getResultList();
+		TypedQuery<Team> allResults = em.createQuery("SELECT team FROM Team team ORDER BY team.teamName", Team.class);
+		List<Team> allItems = allResults.getResultList();
 		em.close();
-		return allTeams;
+		return allItems;
 	}
-
-	public Team searchForTeamById(int idToFind) {
-		// TODO Auto-generated method stub
+	
+	public Team searchForTeamById(int searchId) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		Team foundTeam = em.find(Team.class, idToFind);
+		Team foundItem = em.find(Team.class, searchId);
 		em.close();
-		return foundTeam;
+		return foundItem;
 	}
-
 }

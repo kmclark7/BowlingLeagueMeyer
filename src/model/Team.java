@@ -16,6 +16,7 @@ public class Team {
 
 @Id
 @GeneratedValue(strategy=GenerationType.IDENTITY)
+@Column(name="teamId")
 private int teamID;
 @Column(name="teamName")
 private String teamName;

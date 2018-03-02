@@ -27,8 +27,6 @@ public class Player {
 		// TODO Auto-generated constructor stub
 	}
 
-	
-	
 	public Player(String firstName, String lastName, String phoneNumber, String screenName, Team team) {
 		super();
 		this.firstName = firstName;
