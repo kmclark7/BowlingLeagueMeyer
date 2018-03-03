@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -12,16 +13,16 @@ import javax.servlet.http.HttpServletResponse;
 import model.Team;
 
 /**
- * Servlet implementation class getAllTeamsServlet
+ * Servlet implementation class PrepareAddPlayerjServlet
  */
-@WebServlet("/preparePlayerInsertServlet")
-public class preparePlayerInsertServlet extends HttpServlet {
+@WebServlet("/PreparePlayerInsertServlet")
+public class PreparePlayerInsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public preparePlayerInsertServlet() {
+    public PreparePlayerInsertServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -30,24 +31,24 @@ public class preparePlayerInsertServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub
+		List<Team> team = new ArrayList<Team>();
 		TeamHelper dao = new TeamHelper();
-		List<Team> teams = dao.getAllTeams();
+		team = dao.getAllTeams();
 		
-		if(teams.isEmpty()) {
-			request.setAttribute("allTeams", "---");
-		} else {
-			request.setAttribute("allTeams", teams);
-		}
-		
-		getServletContext().getRequestDispatcher("/insertPlayer.jsp").forward(request, response);
+		        
+        request.setAttribute("allTeams", team);
+                     
+        getServletContext().getRequestDispatcher("/insertPlayer.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
+		
 	}
 
 }
