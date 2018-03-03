@@ -8,8 +8,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name="player")
+
 public class Player {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -68,6 +70,20 @@ public class Player {
 
 	public void setScreenName(String screenName) {
 		this.screenName = screenName;
+	}
+	
+	public Team getTeamId() {
+		return team;
+	}
+
+
+	public void setTeamId(Team team) {
+		this.team = team;
+	}
+
+
+	public int getPlayerId() {
+		return playerId;
 	}
 
 	@Override
