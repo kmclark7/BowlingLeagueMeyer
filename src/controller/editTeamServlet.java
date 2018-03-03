@@ -45,9 +45,9 @@ public class editTeamServlet extends HttpServlet {
 			//no button has been selected
 			getServletContext().getRequestDispatcher("/viewAllTeamsServlet").forward(request, response);
 		}else if(act.equals("Delete Selected Team")){
-			Integer tempId = Integer.parseInt(request.getParameter("id"));
+			Integer tempId = Integer.parseInt(request.getParameter("teamId"));
 			Team itemToDelete = dao.searchForTeamById(tempId);
-					//dao.delete(itemToDelete);
+				dao.itemToDelete(itemToDelete);
 			getServletContext().getRequestDispatcher("/viewAllTeamsServlet").forward(request, response);
 		}else if(act.equals("Edit Selected Team")) {
 			Integer tempId = Integer.parseInt(request.getParameter("id"));

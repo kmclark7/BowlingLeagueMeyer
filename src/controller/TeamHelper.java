@@ -38,4 +38,16 @@ public class TeamHelper {
 		em.close();
 		return foundItem;
 	}
+	public void itemToDelete(Team toDelete) {
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		TypedQuery<Team> typedQuery = em.createQuery("select li from Team li", Team.class);
+		typedQuery.setMaxResults(1);
+		Team result = typedQuery.getSingleResult();
+		
+		em.remove(result);
+		em.getTransaction().commit();
+		em.close();
+		
+	}
 }
